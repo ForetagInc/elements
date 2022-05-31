@@ -55,16 +55,6 @@ pub fn Input(props: &InputProps) -> Html {
 		})
 	};
 
-	{
-		use_effect_with_deps(
-			move |_| {
-				log::info!("Toggled: {:?}", is_focused);
-				|| ()
-			},
-			is_focused,
-		)
-	}
-
 	let placeholder = if is_focused.not() {
 		yew::AttrValue::from(props.label.clone())
 	} else {
