@@ -1,9 +1,6 @@
 use yew::prelude::*;
 
-use crate::atoms::{
-	button::Button,
-	input::{Input, InputType},
-};
+use crate::atoms::{button::Button, input::Input};
 
 #[function_component(Login)]
 pub fn login() -> Html {
@@ -18,7 +15,7 @@ pub fn login() -> Html {
 				<Input
 					label="ID"
 					placeholder="XYZ123456789"
-					r#type={InputType::Text}
+					r#type="text"
 				/>
 				<Button text="Login" />
 			</div>
