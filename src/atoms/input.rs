@@ -56,9 +56,12 @@ pub fn Input(props: &InputProps) -> Html {
 	};
 
 	let placeholder = if is_focused.not() {
-		yew::AttrValue::from(props.label.clone())
+		AttrValue::from(props.label.clone())
 	} else {
-		props.placeholder.clone().unwrap()
+		props
+			.placeholder
+			.clone()
+			.unwrap_or_else(|| AttrValue::from(""))
 	};
 
 	html! {
