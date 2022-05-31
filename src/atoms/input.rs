@@ -85,7 +85,7 @@ pub fn Input(props: &InputProps) -> Html {
 					classes!(
 						"abs", "top:-2", "left:10", "bg:white", "px:4",
 						is_focused.not().then(|| Some("d:none")),
-						(input_value.chars().count() > 0).then(|| Some("d:block")),
+						(!input_value.is_empty()).then(|| Some("d:block")),
 						&props.label_class
 					)
 				}
