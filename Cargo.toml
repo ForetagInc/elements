@@ -1,0 +1,15 @@
+[package]
+name = 'elements'
+version = '0.1.0'
+edition = '2021'
+
+[dependencies]
+yew = { git = 'https://github.com/yewstack/yew/', features = ['csr'] }
+log = '0.4'
+wasm-bindgen = '0.2'
+wasm-logger = '0.2'
+web-sys = '0.3'
+
+[dev-dependencies]
+wasm-bindgen-test = '0.3'
+wasm-bindgen-futures = '0.4'
