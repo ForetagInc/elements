@@ -1,3 +1,4 @@
+use std::ops::Not;
 use wasm_bindgen::JsCast;
 use web_sys::{EventTarget, HtmlInputElement};
 use yew::prelude::*;
@@ -20,7 +21,7 @@ pub struct InputProps {
 #[function_component]
 pub fn Input(props: &InputProps) -> Html {
 	// Focused
-	let is_focused_handle = use_state(|| true);
+	let is_focused_handle = use_state(|| false);
 	let is_focused = *is_focused_handle;
 
 	// Input
@@ -64,6 +65,12 @@ pub fn Input(props: &InputProps) -> Html {
 		)
 	}
 
+	let placeholder = if is_focused.not() {
+		yew::AttrValue::from(props.label.clone())
+	} else {
+		props.placeholder.clone().unwrap()
+	};
+
 	html! {
 		<div class="rel block">
 			<input
@@ -77,14 +84,14 @@ pub fn Input(props: &InputProps) -> Html {
 					"b:1|solid|gray-80", "r:8", "p:8", "outline:none", "w:full", "mt:8", "mb:16",
 					&props.class
 				)}
-				placeholder={props.placeholder.clone()}
+				placeholder={placeholder}
 			/>
 			<label
 				for={props.label.clone()}
 				class={
 					classes!(
-						"abs", "top:-2", "left:10", "bg:white", "px:4", "d:none",
-						is_focused.then(|| Some("d:block")),
+						"abs", "top:-2", "left:10", "bg:white", "px:4",
+						is_focused.not().then(|| Some("d:none")),
 						&props.label_class
 					)
 				}
