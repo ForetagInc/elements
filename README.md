@@ -21,9 +21,23 @@ Run
 
 ## Tools & Partners
 
+<a href='https://rust-lang.org/?partner=foretag' target='_blank'>
+	<img
+		alt='Rust logo'
+		src='https://img.stackshare.io/service/1070/v7txhrjp9pdqrkdtxxp0.png' 
+		height='48' />
+</a>
 <a href='https://yew.rs/?partner=foretag' target='_blank'>
-	<img src='https://img.stackshare.io/service/8182/default_422947150bda8cfbdbcd54a2d5a664cc45c3cdba.jpg' height='48' />
+	<img
+		alt='Yew logo'
+		src='https://img.stackshare.io/service/8182/default_422947150bda8cfbdbcd54a2d5a664cc45c3cdba.jpg' 
+		height='48'
+	/>
 </a>
 <a href='https://styles.master.co/?partner=foretag' target='_blank'>
-	<img src='https://img.stackshare.io/service/40622/default_72e5c614e3ee0663799271b19281ec45c7b2dd8a.jpg' height='48' />
+	<img
+		alt='Master CSS'
+		src='https://img.stackshare.io/service/40622/default_72e5c614e3ee0663799271b19281ec45c7b2dd8a.jpg' 
+		height='48'
+	/>
 </a>
