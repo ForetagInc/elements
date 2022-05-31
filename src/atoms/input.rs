@@ -71,7 +71,7 @@ pub fn Input(props: &InputProps) -> Html {
 				onfocus={on_focus}
 				onfocusout={on_unfocus}
 				onchange={on_change}
-				value={input_value}
+				value={input_value.clone()}
 				type={props.r#type.clone()}
 				class={classes!(
 					"b:1|solid|gray-80", "r:8", "p:8", "outline:none", "w:full", "mt:8", "mb:16",
@@ -85,6 +85,7 @@ pub fn Input(props: &InputProps) -> Html {
 					classes!(
 						"abs", "top:-2", "left:10", "bg:white", "px:4",
 						is_focused.not().then(|| Some("d:none")),
+						(input_value.chars().count() > 0).then(|| Some("d:block")),
 						&props.label_class
 					)
 				}
