@@ -7,8 +7,6 @@ use crate::atoms::{
 
 #[function_component(Login)]
 pub fn login() -> Html {
-	let is_hovered = use_state(|| false);
-
 	html! {
 		<div class="d:flex h:100vh m:8 ai:center jc:center">
 			<div class="b:1|solid|gray-80 m:14 r:10 px:16 py:8 min-w:360">
@@ -18,8 +16,8 @@ pub fn login() -> Html {
 				</div>
 
 				<Input
-					placeholder="XYZ12345678"
 					label="ID"
+					placeholder="XYZ123456789"
 					r#type={InputType::Text}
 				/>
 				<Button text="Login" />

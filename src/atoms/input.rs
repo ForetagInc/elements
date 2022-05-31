@@ -21,7 +21,7 @@ pub enum InputType {
 #[derive(PartialEq, Properties)]
 pub struct InputProps {
 	pub class: Option<Classes>,
-	pub placeholder: Option<String>,
+	pub placeholder: Option<AttrValue>,
 	pub label: String,
 	pub r#type: InputType,
 }
@@ -84,7 +84,7 @@ pub fn Input(props: &InputProps) -> Html {
 				value={input_value}
 				type="text"
 				class="b:1|solid|gray-80 r:8 p:8 outline:none w:full mt:8 mb:16"
-				placeholder="XYZ12345678"
+				placeholder={props.placeholder.clone()}
 			/>
 			<span
 				class={
