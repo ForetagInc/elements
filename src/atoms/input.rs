@@ -46,7 +46,7 @@ pub fn Input(props: &InputProps) -> Html {
 	};
 
 	let on_unfocus = {
-		let is_focused_handle = is_focused_handle.clone();
+		let is_focused_handle = is_focused_handle;
 
 		Callback::from(move |_e| {
 			is_focused_handle.set(false);
