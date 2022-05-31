@@ -15,7 +15,6 @@ pub fn login() -> Html {
 				<Input
 					label="ID"
 					placeholder="XYZ123456789"
-					r#type="text"
 				/>
 				<Button text="Login" />
 			</div>

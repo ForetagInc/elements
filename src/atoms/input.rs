@@ -2,16 +2,19 @@ use wasm_bindgen::JsCast;
 use web_sys::{EventTarget, HtmlInputElement};
 use yew::prelude::*;
 
-#[derive(PartialEq, Properties, Clone)]
+/// Props for [`Input`]
+#[derive(PartialEq, Properties)]
 pub struct InputProps {
+	#[prop_or_default]
 	pub class: Option<Classes>,
+	#[prop_or_default]
 	pub label_class: Option<Classes>,
-
 	#[prop_or_default]
 	pub placeholder: Option<AttrValue>,
 	#[prop_or_default]
 	pub label: String,
-	pub r#type: AttrValue,
+	#[prop_or_default]
+	pub r#type: Option<AttrValue>,
 }
 
 #[function_component]
@@ -24,7 +27,6 @@ pub fn Input(props: &InputProps) -> Html {
 	let input_value_handle = use_state(String::default);
 	let input_value = (*input_value_handle).clone();
 
-	/** Event: on_focus */
 	let on_focus = {
 		let is_focused_handle = is_focused_handle.clone();
 
@@ -41,7 +43,6 @@ pub fn Input(props: &InputProps) -> Html {
 		})
 	};
 
-	/** Event: on_change */
 	let on_change = {
 		Callback::from(move |e: Event| {
 			let target: Option<EventTarget> = e.target();
