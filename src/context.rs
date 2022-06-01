@@ -1,11 +1,6 @@
-#[derive(Clone, Default, PartialEq)]
-pub enum Theme {
-	#[default]
-	Web,
-	Augmented,
-}
+use crate::util::Theme;
 
-#[derive(Clone, PartialEq)]
-pub struct Elements {
-	theme: Theme,
+#[derive(Clone, Default, PartialEq)]
+pub struct ElementsContext {
+	pub theme: Theme,
 }

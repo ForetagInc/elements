@@ -12,11 +12,28 @@ pub fn login() -> Html {
 					<p class="">{"Use your Whole Account"}</p>
 				</div>
 
-				<Input
-					label="ID"
-					placeholder="XYZ123456789"
-				/>
-				<Button text="Login" />
+				<div class="my:10">
+					<Input
+						label="ID"
+						placeholder="XYZ123456789"
+					/>
+				</div>
+
+				<div class="d:flex jc:space-between gap:10 my:10">
+					<Button
+						text="Create account"
+						borderless={true}
+						class={classes!("t:left")}
+					/>
+
+					<Button
+						text="Login"
+						bold={true}
+						uppercase={true}
+						rounded={true}
+						disabled={true}
+					/>
+				</div>
 			</div>
 		</div>
 	}

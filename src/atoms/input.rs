@@ -10,12 +10,14 @@ pub struct InputProps {
 	pub class: Option<Classes>,
 	#[prop_or_default]
 	pub label_class: Option<Classes>,
-	#[prop_or_default]
-	pub placeholder: Option<AttrValue>,
+	#[prop_or(AttrValue::from(""))]
+	pub placeholder: AttrValue,
 	#[prop_or_default]
 	pub label: String,
 	#[prop_or_default]
 	pub r#type: Option<AttrValue>,
+	#[prop_or(false)]
+	pub disabled: bool,
 }
 
 #[function_component]
@@ -58,10 +60,7 @@ pub fn Input(props: &InputProps) -> Html {
 	let placeholder = if is_focused.not() {
 		AttrValue::from(props.label.clone())
 	} else {
-		props
-			.placeholder
-			.clone()
-			.unwrap_or_else(|| AttrValue::from(""))
+		props.placeholder.clone()
 	};
 
 	html! {
@@ -78,6 +77,7 @@ pub fn Input(props: &InputProps) -> Html {
 					&props.class
 				)}
 				placeholder={placeholder}
+				disabled={props.disabled}
 			/>
 			<label
 				for={props.label.clone()}
