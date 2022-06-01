@@ -4,16 +4,29 @@ mod organisms;
 mod pages;
 mod templates;
 
-pub(crate) mod context;
+mod util;
 
+pub(crate) mod context;
+use context::ElementsContext;
+
+use std::rc::Rc;
 use yew::prelude::*;
 
 use crate::pages::login::Login;
 
 #[function_component]
 fn App() -> Html {
+	let context = use_memo(
+		|_| ElementsContext {
+			theme: util::Theme::Screen,
+		},
+		(),
+	);
+
 	html! {
-		<Login />
+		<ContextProvider<Rc<ElementsContext>> context={context}>
+			<Login />
+		</ContextProvider<Rc<ElementsContext>>>
 	}
 }
 
