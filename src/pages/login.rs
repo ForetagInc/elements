@@ -1,6 +1,6 @@
 use yew::prelude::*;
 
-use crate::atoms::{button::Button, input::Input};
+use crate::atoms::{Button, Input, Switch};
 
 #[function_component(Login)]
 pub fn login() -> Html {
@@ -12,11 +12,17 @@ pub fn login() -> Html {
 					<p class="">{"Use your Whole Account"}</p>
 				</div>
 
-				<div class="my:10">
+				<div class="my:20">
 					<Input
 						label="ID"
 						placeholder="XYZ123456789"
 					/>
+					<div class="flex flex:row-reverse">
+						<Switch
+							label="Remember me"
+							toggled={true}
+						/>
+					</div>
 				</div>
 
 				<div class="d:flex jc:space-between gap:10 my:10">
