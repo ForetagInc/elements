@@ -9,7 +9,6 @@ mod util;
 pub(crate) mod context;
 use context::ElementsContext;
 
-use std::rc::Rc;
 use yew::prelude::*;
 
 use crate::pages::login::Login;
@@ -19,14 +18,15 @@ fn App() -> Html {
 	let context = use_memo(
 		|_| ElementsContext {
 			theme: util::Theme::Screen,
+			scheme: util::Scheme::Light,
 		},
 		(),
 	);
 
 	html! {
-		<ContextProvider<Rc<ElementsContext>> context={context}>
+		<ContextProvider<ElementsContext> context={(*context).clone()}>
 			<Login />
-		</ContextProvider<Rc<ElementsContext>>>
+		</ContextProvider<ElementsContext>>
 	}
 }
 

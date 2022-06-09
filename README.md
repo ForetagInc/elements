@@ -4,7 +4,7 @@ Elements is a open source design system and style guide, it is a collection of r
 
 ## Features
 
-- Multi themed: Screen & Augmented Reality
+- Multiple themes: Screen & Augmented Reality
 - Light & Dark schemes with-in variants
 - Responsive: Desktop, Wearables or Mobile
 - Styled with [Master CSS](https://styles.master.co/) and extendable

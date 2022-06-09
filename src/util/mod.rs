@@ -6,3 +6,6 @@ pub use variant::Variant;
 
 pub(crate) mod scheme;
 pub use scheme::Scheme;
+
+pub(crate) mod align;
+pub use align::{XAlignment, YAlignment};
