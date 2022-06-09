@@ -1,4 +1,4 @@
-#[derive(Default)]
+#[derive(Default, Clone, PartialEq)]
 pub enum XAlignment {
 	#[default]
 	Left,
@@ -6,7 +6,7 @@ pub enum XAlignment {
 	Right,
 }
 
-#[derive(Default)]
+#[derive(Default, Clone, PartialEq)]
 pub enum YAlignment {
 	#[default]
 	Top,

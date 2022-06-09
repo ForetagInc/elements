@@ -19,6 +19,8 @@ fn App() -> Html {
 		|_| ElementsContext {
 			theme: util::Theme::Screen,
 			scheme: util::Scheme::Light,
+			x_align: util::XAlignment::Right,
+			y_align: util::YAlignment::Top,
 		},
 		(),
 	);
