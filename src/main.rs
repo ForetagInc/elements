@@ -15,15 +15,9 @@ use crate::pages::login::Login;
 
 #[function_component]
 fn App() -> Html {
-	let context = use_memo(
-		|_| ElementsContext {
-			theme: util::Theme::Screen,
-			scheme: util::Scheme::Light,
-			x_align: util::XAlignment::Right,
-			y_align: util::YAlignment::Top,
-		},
-		(),
-	);
+	let elements = ElementsContext::new(util::Theme::Screen, util::Scheme::Light);
+
+	let context = use_memo(|_| elements, ());
 
 	html! {
 		<ContextProvider<ElementsContext> context={(*context).clone()}>
