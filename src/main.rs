@@ -7,22 +7,19 @@ mod templates;
 mod util;
 
 pub(crate) mod context;
-use context::ElementsContext;
 
+// Example
+use bounce::BounceRoot;
 use yew::prelude::*;
 
 use crate::pages::login::Login;
 
-#[function_component]
-fn App() -> Html {
-	let elements = ElementsContext::new(util::Theme::Screen, util::Scheme::Light);
-
-	let context = use_memo(|_| elements, ());
-
+#[function_component(App)]
+fn app() -> Html {
 	html! {
-		<ContextProvider<ElementsContext> context={(*context).clone()}>
+		<BounceRoot>
 			<Login />
-		</ContextProvider<ElementsContext>>
+		</BounceRoot>
 	}
 }
 

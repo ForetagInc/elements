@@ -1,4 +1,6 @@
-#[derive(Default, Clone, PartialEq)]
+use serde::{Deserialize, Serialize};
+
+#[derive(Default, Clone, PartialEq, Serialize, Deserialize)]
 pub enum XAlignment {
 	#[default]
 	Left,
@@ -6,7 +8,7 @@ pub enum XAlignment {
 	Right,
 }
 
-#[derive(Default, Clone, PartialEq)]
+#[derive(Default, Clone, PartialEq, Serialize, Deserialize)]
 pub enum YAlignment {
 	#[default]
 	Top,

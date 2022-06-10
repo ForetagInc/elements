@@ -1,8 +1,9 @@
+use serde::{Deserialize, Serialize};
 use web_sys::window;
 
 /// Scheme of the theme
 /// i.e. "dark" or "light"
-#[derive(Clone, Default, PartialEq)]
+#[derive(Clone, Default, PartialEq, Serialize, Deserialize)]
 pub enum Scheme {
 	#[default]
 	Light,

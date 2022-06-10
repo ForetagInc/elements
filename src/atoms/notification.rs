@@ -1,8 +1,6 @@
 use chrono::{DateTime, Utc};
 use yew::prelude::*;
 
-use crate::context::ElementsContext;
-
 #[derive(Properties, Clone, PartialEq)]
 pub struct NotificationProps {
 	#[prop_or_default]
@@ -21,8 +19,6 @@ pub struct NotificationProps {
 
 #[function_component(Notification)]
 pub fn notification(props: &NotificationProps) -> Html {
-	let context = use_context::<ElementsContext>().expect("No elements context found");
-
 	html! {
 		<div class={
 			classes!(

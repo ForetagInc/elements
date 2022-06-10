@@ -3,17 +3,22 @@ use crate::util::{
 	Scheme, Theme,
 };
 
-#[derive(Clone, Default, PartialEq)]
-pub struct ElementsContext {
+use bounce::*;
+use gloo::storage::{LocalStorage, Storage};
+use serde::{Deserialize, Serialize};
+
+#[derive(Atom, Clone, Default, PartialEq, Serialize, Deserialize)]
+#[bounce(observed)]
+pub struct Context {
 	pub theme: Theme,
 	pub scheme: Scheme,
 	pub x_align: XAlignment,
 	pub y_align: YAlignment,
 }
 
-impl ElementsContext {
+impl Context {
 	pub fn new(theme: Theme, scheme: Scheme) -> Self {
-		let ctx = ElementsContext {
+		let ctx = Context {
 			theme,
 			scheme,
 			x_align: XAlignment::Right,
@@ -27,5 +32,11 @@ impl ElementsContext {
 
 	pub fn init(&self) {
 		self.scheme.init();
+	}
+}
+
+impl Observed for Context {
+	fn changed(self: std::rc::Rc<Self>) {
+		LocalStorage::set("app", &self).expect("Failed to set Context");
 	}
 }

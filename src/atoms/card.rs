@@ -1,5 +1,3 @@
-use crate::context::ElementsContext;
-
 use yew::prelude::*;
 
 #[derive(Clone, Properties, PartialEq)]
@@ -12,8 +10,6 @@ pub struct CardProps {
 
 #[function_component(Card)]
 pub fn card(props: &CardProps) -> Html {
-	let context = use_context::<ElementsContext>().expect("No elements context found");
-
 	html! {
 		<div
 			class={
