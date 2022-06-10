@@ -26,6 +26,6 @@ impl ElementsContext {
 	}
 
 	pub fn init(&self) {
-		self.theme.init();
+		self.scheme.init();
 	}
 }
