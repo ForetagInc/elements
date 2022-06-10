@@ -25,7 +25,7 @@ impl Scheme {
 
 		let storage_theme = storage.get_item("theme").unwrap();
 
-		let is_dark: bool = match storage_theme {
+		let is_dark = match storage_theme {
 			None => {
 				storage.set_item("theme", "dark").unwrap();
 				false
