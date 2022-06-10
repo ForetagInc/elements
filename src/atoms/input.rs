@@ -1,4 +1,4 @@
-use std::ops::Not;
+use std::ops::{BitAnd, Not};
 use wasm_bindgen::JsCast;
 use web_sys::{EventTarget, HtmlInputElement};
 use yew::prelude::*;
@@ -6,10 +6,12 @@ use yew::prelude::*;
 /// Props for [`Input`]
 #[derive(PartialEq, Properties)]
 pub struct InputProps {
+	// Styling
 	#[prop_or_default]
 	pub class: Option<Classes>,
 	#[prop_or_default]
 	pub label_class: Option<Classes>,
+	// Attributes
 	#[prop_or(AttrValue::from(""))]
 	pub placeholder: AttrValue,
 	#[prop_or_default]
@@ -18,10 +20,22 @@ pub struct InputProps {
 	pub r#type: Option<AttrValue>,
 	#[prop_or(false)]
 	pub disabled: bool,
+	#[prop_or(false)]
+	pub loading: bool,
 }
 
 #[function_component]
 pub fn Input(props: &InputProps) -> Html {
+	// let id = str::replace(props.label.clone().as_str(), " ", "_");
+
+	let is_togglable = matches!(
+		props
+			.r#type
+			.clone()
+			.unwrap_or(yew::AttrValue::Static("text")),
+		yew::AttrValue::Static("text") | yew::AttrValue::Static("email")
+	);
+
 	// Focused
 	let is_focused_handle = use_state(|| false);
 	let is_focused = *is_focused_handle;
@@ -73,7 +87,7 @@ pub fn Input(props: &InputProps) -> Html {
 				value={input_value.clone()}
 				type={props.r#type.clone()}
 				class={classes!(
-					"b:1|solid|gray-80", "r:8", "p:8", "outline:none", "w:full", "mt:8", "mb:16",
+					"b:1|solid|gray-86", "r:8", "p:8", "outline:none", "w:full", "mt:8", "mb:16",
 					&props.class
 				)}
 				placeholder={placeholder}
@@ -83,9 +97,9 @@ pub fn Input(props: &InputProps) -> Html {
 				for={props.label.clone()}
 				class={
 					classes!(
-						"abs", "top:-2", "left:10", "bg:white", "px:4",
-						is_focused.not().then(|| Some("d:none")),
-						(!input_value.is_empty()).then(|| Some("d:block")),
+						is_togglable.then(|| Some("top:-2 left:10 abs bg:white px:4")),
+						is_togglable.bitand(is_focused.not()).then(|| Some("d:none")),
+						(is_togglable.bitand(!input_value.is_empty())).then(|| Some("d:block")),
 						&props.label_class
 					)
 				}

@@ -1,5 +1,7 @@
 use web_sys::window;
 
+/// Scheme of the theme
+/// i.e. "dark" or "light"
 #[derive(Clone, Default, PartialEq)]
 pub enum Scheme {
 	#[default]

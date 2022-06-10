@@ -1,6 +1,13 @@
 use std::ops::Not;
 use yew::prelude::*;
 
+#[derive(Clone, Default, PartialEq)]
+pub enum ButtonVariant {
+	#[default]
+	Default,
+	Transparent,
+}
+
 #[derive(Properties, PartialEq)]
 pub struct ButtonProps {
 	pub text: String,
@@ -10,6 +17,9 @@ pub struct ButtonProps {
 
 	#[prop_or_default]
 	pub class: Option<Classes>,
+
+	#[prop_or_default]
+	pub variant: ButtonVariant,
 
 	/*
 		Styling
@@ -26,6 +36,12 @@ pub struct ButtonProps {
 
 #[function_component(Button)]
 pub fn button(props: &ButtonProps) -> Html {
+	// Styling: Variants
+	let variant = match &props.variant {
+		ButtonVariant::Default => classes!(),
+		ButtonVariant::Transparent => classes!(),
+	};
+
 	html! {
 		<button
 			disabled={props.disabled}
@@ -33,8 +49,10 @@ pub fn button(props: &ButtonProps) -> Html {
 				classes!(
 					&props.class,
 
+					variant,
+
 					&props.borderless.then(|| Some("b:none")),
-					&props.borderless.not().then(|| Some("b:1|solid|gray-78 ")),
+					&props.borderless.not().then(|| Some("b:1|solid|gray-86")),
 
 					&props.rounded.then(|| Some("r:50")),
 					&props.rounded.not().then(|| Some("r:4")),

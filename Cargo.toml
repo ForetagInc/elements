@@ -4,6 +4,7 @@ version = '0.1.0'
 edition = '2021'
 
 [dependencies]
+bounce = '0.2'
 chrono = { version = '0.4', features = ['wasmbind'] }
 log = '0.4'
 yew = { git = 'https://github.com/yewstack/yew/', features = ['csr'] }

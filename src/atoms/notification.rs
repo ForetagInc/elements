@@ -26,6 +26,8 @@ pub fn notification(props: &NotificationProps) -> Html {
 	html! {
 		<div class={
 			classes!(
+				// Dark mode
+				"bg:gray-20@dark",
 				String::from("abs top:10 right:14"),
 				String::from("r:10 bg:gray-90 bd:blur(6px) min-w:360 p:10|20 f:14 untouchable"),
 				"box-shadow:0px|0px|15px|5px|rgba(0,0,0,0.1)"
