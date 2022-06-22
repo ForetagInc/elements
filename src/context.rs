@@ -7,7 +7,7 @@ use bounce::*;
 use gloo::storage::{LocalStorage, Storage};
 use serde::{Deserialize, Serialize};
 
-#[derive(Atom, Clone, Default, PartialEq, Serialize, Deserialize)]
+#[derive(Atom, Default, Clone, PartialEq, Serialize, Deserialize)]
 #[bounce(observed)]
 pub struct Context {
 	pub theme: Theme,
@@ -35,8 +35,23 @@ impl Context {
 	}
 }
 
+// impl Default for Context {
+// 	fn default() -> Self {
+// 		let stored = LocalStorage::get("app").unwrap();
+
+// 		match stored {
+// 			Ok(_) => {
+// 				let config: Context = serde_json::from_str(&stored.unwrap()).unwrap();
+
+// 				Self { ..config }
+// 			}
+// 			Err(_) => Context::new(Theme::Screen, Scheme::Light),
+// 		}
+// 	}
+// }
+
 impl Observed for Context {
 	fn changed(self: std::rc::Rc<Self>) {
-		LocalStorage::set("app", &self).expect("Failed to set Context");
+		LocalStorage::set("app", &*self).expect("Failed to set Context");
 	}
 }

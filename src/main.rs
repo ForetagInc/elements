@@ -9,7 +9,7 @@ mod util;
 pub(crate) mod context;
 
 // Example
-use bounce::BounceRoot;
+// use bounce::*;
 use yew::prelude::*;
 
 use crate::pages::login::Login;
@@ -17,9 +17,7 @@ use crate::pages::login::Login;
 #[function_component(App)]
 fn app() -> Html {
 	html! {
-		<BounceRoot>
-			<Login />
-		</BounceRoot>
+		<Login />
 	}
 }
 
