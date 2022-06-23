@@ -1,14 +1,11 @@
 use yew::prelude::*;
 
 use crate::atoms::{Button, Card, Input, Switch};
-use crate::molecules::Notifications;
 
 #[function_component(Login)]
 pub fn login() -> Html {
 	html! {
 		<>
-			<Notifications notifications={vec![]} />
-
 			<div class="d:flex h:100vh m:8 ai:center jc:center">
 				<Card loading={true}>
 					<div class="flex flex:column ai:center jc:center my:16">
