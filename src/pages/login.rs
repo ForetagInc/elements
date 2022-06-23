@@ -1,21 +1,13 @@
-use chrono::Utc;
 use yew::prelude::*;
 
-use crate::atoms::{Button, Card, Input, Notification, Switch};
+use crate::atoms::{Button, Card, Input, Switch};
+use crate::molecules::Notifications;
 
 #[function_component(Login)]
 pub fn login() -> Html {
 	html! {
 		<>
-			<Notification
-				icon="https://seeklogo.com/images/D/discord-logo-134E148657-seeklogo.com.png"
-				media="https://cdn.getyourguide.com/img/location/5ffeb496e3e09.jpeg/88.jpg"
-				app="Discord"
-				title="itsezc - Chiru B"
-				subject="Watch this and tell me what you think"
-				datetime={Utc::now()}
-				more="10 more notifications"
-			/>
+			<Notifications notifications={vec![]} />
 
 			<div class="d:flex h:100vh m:8 ai:center jc:center">
 				<Card loading={true}>

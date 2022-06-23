@@ -4,6 +4,8 @@ use yew::prelude::*;
 #[derive(Properties, Clone, PartialEq)]
 pub struct NotificationProps {
 	#[prop_or_default]
+	pub class: Option<Classes>,
+	#[prop_or_default]
 	pub icon: String,
 	#[prop_or_default]
 	pub app: String,
@@ -22,10 +24,10 @@ pub fn notification(props: &NotificationProps) -> Html {
 	html! {
 		<div class={
 			classes!(
+				&props.class,
 				// Dark mode
 				"bg:gray-20@dark",
-				String::from("abs top:10 right:14"),
-				String::from("r:10 bg:gray-90 bd:blur(6px) min-w:360 p:10|20 f:14 untouchable"),
+				String::from("r:10 bg:gray-90 bd:blur(6px) min-w:360 p:10|20 f:14"),
 				"box-shadow:0px|0px|15px|5px|rgba(0,0,0,0.1)"
 			)
 		}>
@@ -43,7 +45,7 @@ pub fn notification(props: &NotificationProps) -> Html {
 			<div class="flex jc:space-between">
 				<div>
 					<b class="f:semibold">{&props.title}</b>
-					<p>{props.subject.clone().unwrap_or_else(|| "".to_string())}</p>
+					<p class="t:ellipsis w:90% white-space:nowrap overflow:hidden">{props.subject.clone().unwrap_or_else(|| "".to_string())}</p>
 					{
 						if !props.more.is_empty() {
 							html! {
