@@ -23,7 +23,7 @@ pub fn TimelineStep(props: &TimelineStepProps) -> Html {
 			<p class="b:1|solid|gray-86 bg:white p:2 h:28 w:28 line-height:1.4rem t:center round f:semibold f:12">
 				{props.step.unwrap()}
 			</p>
-			<div>
+			<div class="mt:4">
 				{props.children.clone()}
 			</div>
 		</li>
