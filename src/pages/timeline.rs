@@ -32,7 +32,6 @@ pub fn timeline() -> Html {
 					<div>{"sid"}</div>
 					<div>{"sid"}</div>
 					<div>{"sid"}</div>
-
 					<div>{"sid"}</div>
 					<div>{"sid"}</div>
 					<div>{"sid"}</div>
@@ -42,7 +41,6 @@ pub fn timeline() -> Html {
 					<div>{"sid"}</div>
 					<div>{"sid"}</div>
 					<div>{"sid"}</div>
-
 					<div>{"sid"}</div>
 					<div>{"sid"}</div>
 					<div>{"sid"}</div>
