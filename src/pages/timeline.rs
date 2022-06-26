@@ -60,6 +60,9 @@ pub fn timeline() -> Html {
 				<TimelineStep>
 					<div>{"shriyans"}</div>
 				</TimelineStep>
+				<TimelineStep>
+					<div>{"ken"}</div>
+				</TimelineStep>
 			</Timeline>
 		</div>
 	}
