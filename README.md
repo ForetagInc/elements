@@ -1,6 +1,7 @@
+
 # Elements
 
-Elements is a open source design system and style guide, it is a collection of reusable components for the web & augmented reality applications.
+Elements is a open source design system and style guide (for Foretag), it is a collection of reusable components for the web, native  & augmented reality (XR) applications.
 
 ## Features
 
@@ -12,12 +13,13 @@ Elements is a open source design system and style guide, it is a collection of r
 - Designed and optimized for a11y
 - Snappy performance and render times
 - 1000+ components, pages, templates and counting
+- Ready for AR, XR and Metaverse
 
 ## Tests
 
 Run 
 
-```cargo test --target wasm32-unknown-unknown```
+```cargo
 
 ## Tools & Partners
 
@@ -40,4 +42,4 @@ Run
 		src='https://img.stackshare.io/service/40622/default_72e5c614e3ee0663799271b19281ec45c7b2dd8a.jpg' 
 		height='48'
 	/>
-</a>
+```
