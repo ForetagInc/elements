@@ -10,11 +10,11 @@ pub struct TimelineProps {
 
 #[function_component]
 pub fn Timeline(props: &TimelineProps) -> Html {
-	let last_index = (props.children.len() as i8) - 1;
+	let last_index = props.children.len() as i8;
 
 	let steps = props.children.iter().enumerate().map(|(i, mut step)| {
 		let mut props = Rc::make_mut(&mut step.props);
-		props.step = Some(i as i8);
+		props.step = Some((i as i8) + 1);
 		props.last = last_index == props.step.unwrap();
 		props.children = props.children.clone();
 		step
