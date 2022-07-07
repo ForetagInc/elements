@@ -1,7 +1,5 @@
 import '@master/css';
 
-import { MINIMAL_VIEWPORTS } from '@storybook/addon-viewport';
-
 // 👉 Viewports
 
 const viewports = {
@@ -56,6 +54,7 @@ const actions = { argTypesRegex: "^on[A-Z].*" };
 // 👉 Controls
 
 const controls = {
+	expanded: true,
 	matchers: {
 		color: /(background|color)$/i,
 		date: /Date$/,

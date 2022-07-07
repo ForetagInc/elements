@@ -1,26 +1,55 @@
 
-import { Meta, Story } from '@storybook/addon-docs';
+import { Canvas, Meta, Story } from '@storybook/addon-docs';
 
 import { Button, IButtonProps } from './Button';
 
 <Meta title="Button" component={Button} />
 
-<!-- 👇 We create a “template” of how args map to rendering -->
-
 export const Template = (args) => <Button {...args} />;
 
-<!-- 👇 Each story then reuses that template -->
+<!-- 👇 Docs -->
 
-<Story 
-	name='Default'
-	argTypes={{
-		label: {
-			control: 'text'
-		}
-	}}
-	args={{
-		label: 'Button'
-	}}
->
-	{Template.bind({})}
-</Story>
+# Button
+
+A button can be used to provide interactivity to the user, there are multiple variations of a button.
+
+## Default
+
+<Canvas>
+	<Story 
+		name='Default'
+		args={{
+			label: 'Button'
+		}}
+	>
+		{Template.bind({})}
+	</Story>
+</Canvas>
+
+## Disabled
+
+<Canvas>
+	<Story 
+		name='Disabled'
+		args={{
+			label: 'Button',
+			disabled: true
+		}}
+	>
+		{Template.bind({})}
+	</Story>
+</Canvas>
+
+## Uppercase
+
+<Canvas>
+	<Story 
+		name='Uppercase'
+		args={{
+			label: 'Button',
+			uppercase: true
+		}}
+	>
+		{Template.bind({})}
+	</Story>
+</Canvas>

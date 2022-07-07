@@ -3,14 +3,7 @@ module.exports = {
 		'../packages/**/*.stories.@(js|ts|tsx|mdx)'
 	],
 	'addons': [
-		{
-			name: '@storybook/addon-docs',
-			options: {
-				sourceLoaderOptions: {
-					injectStoryParameters: false,
-				},
-			},
-		},
+		'@storybook/addon-docs',
 		'@storybook/addon-links',
 		'@storybook/addon-a11y',
 		'@storybook/addon-actions',
@@ -20,8 +13,9 @@ module.exports = {
 		'@storybook/addon-measure',
 		'@storybook/addon-outline',
 		'@storybook/addon-viewport',
+		'@storybook/addon-toolbars',
 		// Defaults
-		'@storybook/addon-essentials',
+		'@storybook/addon-essentials'
 	],
 	'framework': '@storybook/react',
 	'core': {
@@ -31,6 +25,7 @@ module.exports = {
 	features: {
 		storyStoreV7: true,
 		postcss: false,
+		interactionsDebugger: true
 	},
 	typescript: {
 		check: false,
