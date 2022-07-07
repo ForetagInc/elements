@@ -1,8 +1,7 @@
-<!-- Button.stories.mdx -->
 
 import { Meta, Story } from '@storybook/addon-docs';
 
-import { Button } from './Button';
+import { Button, IButtonProps } from './Button';
 
 <Meta title="Button" component={Button} />
 
@@ -14,8 +13,13 @@ export const Template = (args) => <Button {...args} />;
 
 <Story 
 	name='Default'
+	argTypes={{
+		label: {
+			control: 'text'
+		}
+	}}
 	args={{
-		text: 'Button'
+		label: 'Button'
 	}}
 >
 	{Template.bind({})}
