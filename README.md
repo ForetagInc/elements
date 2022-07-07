@@ -15,12 +15,6 @@ Elements is a open source design system and style guide (for Foretag), it is a c
 - 1000+ components, pages, templates and counting
 - Ready for AR, XR and Metaverse
 
-## Tests
-
-Run 
-
-```
-
 ## Tools & Partners
 
 <a href='https://styles.master.co/?partner=foretag' target='_blank'>
@@ -30,4 +24,3 @@ Run
 		height='48'
 	/>
 </a>
-```
