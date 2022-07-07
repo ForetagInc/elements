@@ -15,3 +15,6 @@ pub use notification::Notification;
 
 pub mod switch;
 pub use switch::Switch;
+
+pub mod video;
+pub use video::{Video, VideoSource};

@@ -12,12 +12,12 @@ pub(crate) mod context;
 // use bounce::*;
 use yew::prelude::*;
 
-use crate::pages::timeline::TimelinePage;
+use crate::pages::video::VideoPage;
 
 #[function_component(App)]
 fn app() -> Html {
 	html! {
-		<TimelinePage />
+		<VideoPage />
 	}
 }
 
