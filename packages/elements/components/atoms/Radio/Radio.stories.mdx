@@ -1,0 +1,24 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs';
+
+import { Radio } from './Radio';
+
+<Meta 
+	title='Components/Radio' 
+	component={Radio} 
+/>
+
+export const Template = (args) => <Radio {...args} />;
+
+<!-- 👇 Docs -->
+
+# Radio
+
+## Default
+
+<Canvas>
+	<Story 
+		name='Default'
+	>
+		{Template.bind({})}
+	</Story>
+</Canvas>

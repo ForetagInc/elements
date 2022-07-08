@@ -1,0 +1,24 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs';
+
+import { Container } from './Container';
+
+<Meta 
+	title='Layout/Container' 
+	component={Container} 
+/>
+
+export const Template = (args) => <Container {...args} />;
+
+<!-- 👇 Docs -->
+
+# Container
+
+## Default
+
+<Canvas>
+	<Story
+		name='Default'
+	>
+		{Template.bind({})}
+	</Story>
+</Canvas>
