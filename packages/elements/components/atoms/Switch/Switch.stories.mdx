@@ -1,0 +1,41 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs';
+
+import { Switch, ISwitchProps } from './Switch';
+
+<Meta 
+	title='Design System/Elements/Atoms/Switch' 
+	component={Switch} 
+/>
+
+export const Template = (args) => <Switch {...args} />;
+
+<!-- 👇 Docs -->
+
+# Switch
+
+## Default 
+
+<Canvas>
+	<Story 
+		name='Default'
+		args={{
+			toggled: true
+		}}
+	>
+		{Template.bind({})}
+	</Story>
+</Canvas>
+
+
+## Disabled 
+
+<Canvas>
+	<Story 
+		name='Disabled'
+		args={{
+			disabled: true
+		}}
+	>
+		{Template.bind({})}
+	</Story>
+</Canvas>

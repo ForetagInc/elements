@@ -48,3 +48,12 @@ Elements is a open source design system and style guide (for Foretag), it is a c
 		height='48'
 	/>
 </a>
+
+<a href='https://storybook.js.org/?partner=foretag' target='_blank'>
+	<img
+		alt='Storybook'
+		src='https://img.stackshare.io/service/9240/sOct-Txm_400x400.png'
+		height='48'
+	/>
+</a>
+

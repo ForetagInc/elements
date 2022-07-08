@@ -1,4 +1,5 @@
 import '@master/css';
+import '@master/normal.css';
 
 // 👉 Viewports
 
@@ -62,6 +63,7 @@ const controls = {
 };
 
 export const parameters = {
+	layout: 'centered',
 	actions,
 	controls,
 	viewport: {

@@ -5,22 +5,22 @@ export interface IButtonProps {
 	label: string,
 
 	/**
-	* Visually and functionally disable the button.
+	* Visually and functionally disable the Button.
 	*/
 	disabled: boolean,
 
 	/**
-	* Uppercase the text inside the button.
+	* Uppercase the text inside the Button.
 	*/
 	uppercase: boolean,
 
 	/**
-	* Bolden the text inside the button.
+	* Bolden the text inside the Button.
 	*/
 	bold: boolean,
 
 	/**
-	* Remove the border of the button
+	* Remove the border of the Button
 	*/
 	borderless: boolean,
 
