@@ -43,6 +43,7 @@
 		]
 	},
 	"dependencies": {
-		"@master/normal.css": "^1.9.4"
+		"@master/normal.css": "^1.9.4",
+		"remixicon": "^2.5.0"
 	}
 }

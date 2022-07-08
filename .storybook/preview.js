@@ -1,5 +1,6 @@
 import '@master/css';
 import '@master/normal.css';
+import 'remixicon/fonts/remixicon.css';
 
 // 👉 Viewports
 
