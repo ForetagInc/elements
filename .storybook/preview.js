@@ -65,11 +65,17 @@ const controls = {
 
 export const parameters = {
 	layout: 'centered',
+	viewMode: 'docs',
 	actions,
 	controls,
 	viewport: {
 		viewports: {
 			...viewports
 		}
-	}
+	},
+	options: {
+		storySort: {
+			order: ['Introduction', 'Components', '*']
+		}
+	},
 };
