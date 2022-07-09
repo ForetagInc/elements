@@ -10,6 +10,7 @@ export interface ISwitchProps {
 	* Toggle the checkbox's value and visually.
 	*/
 	toggled: boolean;
+
 	label?: string;
 }
 

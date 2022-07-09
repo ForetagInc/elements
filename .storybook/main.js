@@ -16,7 +16,9 @@ module.exports = {
 		'@storybook/addon-viewport',
 		'@storybook/addon-toolbars',
 		// Defaults
-		'@storybook/addon-essentials'
+		'@storybook/addon-essentials',
+		// Custom
+		'./addons/storybook-addon-threejs'
 	],
 	'framework': '@storybook/react',
 	'core': {

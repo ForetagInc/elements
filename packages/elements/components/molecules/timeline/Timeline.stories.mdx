@@ -1,0 +1,35 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs';
+
+import { Timeline } from './Timeline';
+import { TimelineStep } from './TimelineStep';
+
+<Meta 
+	title='Components/Timeline' 
+	component={Timeline}
+/>
+
+export const Template = (args) => <Timeline {...args}>
+	<TimelineStep>
+		Step 1 
+	</TimelineStep>
+	<TimelineStep>
+		Step 2
+	</TimelineStep>
+	<TimelineStep>
+		Step 3
+	</TimelineStep>
+</Timeline>;
+
+<!-- 👇 Docs -->
+
+# Timeline
+
+## Default
+
+<Canvas>
+	<Story 
+		name='Default'
+	>
+		{Template.bind({})}
+	</Story>
+</Canvas>

@@ -3,7 +3,7 @@ import { Canvas, Meta, Story } from '@storybook/addon-docs';
 import { Radio } from './Radio';
 
 <Meta 
-	title='Components/Radio' 
+	title='Components/Form/Radio' 
 	component={Radio} 
 />
 
@@ -13,11 +13,26 @@ export const Template = (args) => <Radio {...args} />;
 
 # Radio
 
+A radio input allows people to select only one option from a number of choices. Radio is generally displayed in a radio group.
+
 ## Default
 
 <Canvas>
 	<Story 
 		name='Default'
+	>
+		{Template.bind({})}
+	</Story>
+</Canvas>
+
+## Disabled
+
+<Canvas>
+	<Story 
+		name='Disabled'
+		args={{
+			disabled: true
+		}}
 	>
 		{Template.bind({})}
 	</Story>

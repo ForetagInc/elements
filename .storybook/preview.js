@@ -2,6 +2,27 @@ import '@master/css';
 import '@master/normal.css';
 import 'remixicon/fonts/remixicon.css';
 
+import { ThemeContext } from '../packages/elements/Provider';
+
+// 👉 Toolbar
+
+export const globalTypes = {
+	theme: {
+		name: 'Theme',
+		description: 'Global theme for components',
+		defaultValue: 'Screen',
+		toolbar: {
+			icon: 'structure',
+			// Array of plain string values or MenuItem shape (see below)
+			items: ['Screen', 'XR'],
+			// Property that specifies if the name of the item will be displayed
+			showName: true,
+			// Change title based on selected value
+			dynamicTitle: true,
+		},
+	},
+};
+
 // 👉 Viewports
 
 const viewports = {
@@ -79,3 +100,13 @@ export const parameters = {
 		}
 	},
 };
+
+const withThemeProvider = (Story, context) => {
+	return (
+		<ThemeContext.Provider value='screen'>
+			<Story {...context} />
+		</ThemeContext.Provider>
+	)
+};
+
+export const decorators = [withThemeProvider];

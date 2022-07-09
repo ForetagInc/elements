@@ -11,7 +11,7 @@ export interface INotificationProps {
 
 export const Notification: React.FC<INotificationProps> = (props) => {
 	return (
-		<div className='bg:gray-20@dark r:10 bg:gray-90 bd:blur(6px) min-w:360 p:10|20 f:14 box-shadow:0px|0px|15px|5px|rgba(0,0,0,0.1)'>
+		<div className='bg:gray-20@dark r:10 bg:gray-90 bd:blur(6px) w:360 p:10|20 f:14 box-shadow:0px|0px|15px|5px|rgba(0,0,0,0.1)'>
 			<div className='flex jc:space-between ai:center mt:4 mb:8 f:12 f:gray-50'>
 				<div className='flex ai:center gap:10'>
 					<img
