@@ -96,7 +96,7 @@ export const parameters = {
 	},
 	options: {
 		storySort: {
-			order: ['Introduction', 'Layout', 'Components', 'System', '*', 'Packages']
+			order: ['Docs', 'Layout', 'Form', 'Components', 'System', '*', 'Packages']
 		}
 	},
 };

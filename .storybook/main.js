@@ -17,8 +17,6 @@ module.exports = {
 		'@storybook/addon-toolbars',
 		// Defaults
 		'@storybook/addon-essentials',
-		// Custom
-		'./addons/storybook-addon-threejs'
 	],
 	'framework': '@storybook/react',
 	'core': {
@@ -27,8 +25,8 @@ module.exports = {
 	},
 	features: {
 		storyStoreV7: true,
+		interactionsDebugger: true,
 		postcss: false,
-		interactionsDebugger: true
 	},
 	typescript: {
 		check: false,

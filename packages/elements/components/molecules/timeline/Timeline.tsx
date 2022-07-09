@@ -8,7 +8,7 @@ export const Timeline: FC<PropsWithChildren> = (props) => {
 		<ol className='flex flex:column gap:10'>
 			{
 				Children.map(children, (child, index) => {
-					let step = index + 1;
+					const step = index + 1;
 					const last = step === children.length;
 
 					return cloneElement(child as ReactElement<any, string | JSXElementConstructor<any>>, { step, last })
