@@ -1,6 +1,7 @@
 import { Canvas, Meta, Story } from '@storybook/addon-docs';
 
-import { Notification, INotificationProps } from './Notification';
+import { Notification } from './Notification';
+import { NotificationManager } from './NotificationManager';
 
 <Meta 
 	title='System/Notification' 
@@ -9,17 +10,58 @@ import { Notification, INotificationProps } from './Notification';
 
 export const Template = (args) => <Notification {...args} />;
 
+export const ManagerTemplate = (args) => <NotificationManager {...args} />;
+
 <!-- 👇 Docs -->
 
 # Notification
 
-## Default
+Push notifications to your visitors with a lightweight and easily customizable alert message.
+
+## Standalone
 
 <Canvas>
 	<Story 
-		name='Default'
-		icon='https://cdn-icons-png.flaticon.com/512/2111/2111370.png'
+		name='Standalone'
 	>
 		{Template.bind({})}
 	</Story>
 </Canvas>
+
+## Media 
+
+<Canvas>
+	<Story 
+		name='Media'
+		args={{
+			media: 'https://image-placeholder.com/images/actual-size/57x57.png'
+		}}
+	>
+		{Template.bind({})}
+	</Story>
+</Canvas>
+
+## Manager
+
+<Canvas>
+	<Story 
+		name='Manager'
+		args={{
+			x: 'right',
+			y: 'top',
+			notifications: [
+				{
+					app: 'Discord',
+					icon: 'https://cdn-icons-png.flaticon.com/512/2111/2111370.png'
+				},
+				{
+					app: 'Discord',
+					icon: 'https://cdn-icons-png.flaticon.com/512/2111/2111370.png'
+				}
+			]
+		}}
+	>
+		{ManagerTemplate.bind({})}
+	</Story>
+</Canvas>
+	

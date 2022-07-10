@@ -1,0 +1,53 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs';
+
+import { Collapse } from './Collapse';
+
+<Meta 
+	title='Components/Collapse' 
+	component={Collapse} 
+/>
+
+export const Template = (args) => <Collapse {...args} />;
+
+<!-- 👇 Docs -->
+
+# Collapse
+
+Toggle the visibility of content
+
+## Default
+
+<Canvas>
+	<Story
+		name='Default'
+		args={{
+			children: <>
+				<p>Test</p>
+				<p>Test</p>
+				<p>Test</p>
+				<p>Test</p>
+				<p>Test</p>
+				<p>Test</p>
+				<p>Test</p>
+				<p>Test</p>
+				<p>Test</p>
+			</>
+		}}
+	>
+		{Template.bind({})}
+	</Story>
+</Canvas>
+
+## Open
+
+<Canvas>
+	<Story
+		name='Open'
+		args={{
+			open: true,
+			children: <p>Test</p>
+		}}
+	>
+		{Template.bind({})}
+	</Story>
+</Canvas>
