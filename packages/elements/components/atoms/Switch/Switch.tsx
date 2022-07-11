@@ -29,10 +29,7 @@ export const Switch: React.FC<ISwitchProps> = (props) => {
 
 				type='checkbox'
 				checked={toggled}
-				onChange={e => {
-					e.preventDefault();
-					setToggle(current => !current);
-				}}
+				onChange={_ => { setToggle(current => !current); }}
 				disabled={props.disabled}
 			/>
 			<svg className='w:42 h:24 bg:fade-90 bg:gray-20@dark rounded ~background-color|.3s cursor:pointer'>
