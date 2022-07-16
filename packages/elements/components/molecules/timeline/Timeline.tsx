@@ -1,19 +1,32 @@
 import { FC, PropsWithChildren, Children, cloneElement, ReactElement, JSXElementConstructor } from 'react';
 
-export const Timeline: FC<PropsWithChildren> = (props) => {
+interface ITimelineProps {
+	horizontal?: boolean;
+}
 
-	let children = Children.toArray(props.children);
+export const Timeline: FC<PropsWithChildren<ITimelineProps>> = ({ horizontal, children }) => {
+
+	let childrenArray = Children.toArray(children);
 
 	return (
-		<ol className='flex flex:column gap:10'>
+		<ol className={`flex ${!horizontal && 'flex:column'} gap:10`}>
 			{
 				Children.map(children, (child, index) => {
 					const step = index + 1;
-					const last = step === children.length;
+					const last = step === childrenArray.length;
 
-					return cloneElement(child as ReactElement<any, string | JSXElementConstructor<any>>, { step, last })
+					return cloneElement(
+						child as ReactElement<any, string | JSXElementConstructor<any>>,
+						{ step, last, horizontal }
+					)
 				})
 			}
 		</ol>
 	)
-}
+};
+
+Timeline.defaultProps = {
+	horizontal: false
+};
+
+Timeline.displayName = 'Timeline';

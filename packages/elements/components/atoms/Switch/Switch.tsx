@@ -9,13 +9,16 @@ export interface ISwitchProps {
 	/**
 	* Toggle the checkbox's value and visually.
 	*/
-	toggled: boolean;
+	checked: boolean;
 
+	/**
+	 * Text label to add to the Switch
+	 */
 	label?: string;
 }
 
 export const Switch: React.FC<ISwitchProps> = (props) => {
-	const [toggled, setToggle] = React.useState(props.toggled);
+	const [toggled, setToggle] = React.useState(props.checked);
 
 	return (
 		<label className='inline-flex gap:10 ai:center'>
@@ -24,17 +27,16 @@ export const Switch: React.FC<ISwitchProps> = (props) => {
 					filter:none[disabled]+svg>rect 
 					width:34:active:not([disabled])+svg>rect 
 					cursor:no-drop[disabled]+svg
-					translateX(18):checked+svg>rect
+					translateX(22):checked+svg>rect
 					translateX(4):checked:active:not([disabled])+svg>rect'
-
 				type='checkbox'
 				checked={toggled}
-				onChange={_ => { setToggle(current => !current); }}
+				onChange={() => { setToggle(current => !current); }}
 				disabled={props.disabled}
 			/>
-			<svg className='w:42 h:24 bg:fade-90 bg:gray-20@dark rounded ~background-color|.3s cursor:pointer'>
+			<svg className='w:46 h:24 bg:fade-90 bg:gray-20@dark rounded ~background-color|.3s cursor:pointer'>
 				<rect
-					x='2'
+					x='3'
 					y='3'
 					rx='14'
 					width='18'

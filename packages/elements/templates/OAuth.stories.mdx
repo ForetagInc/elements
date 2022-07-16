@@ -1,0 +1,33 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs';
+
+import { OAuth } from './OAuth';
+
+<Meta 
+	title='Templates/OAuth' 
+	component={OAuth}
+/>
+
+export const Template = (args) => <OAuth {...args} />;
+
+<!-- 👇 Docs -->
+
+# OAuth
+
+<Canvas>
+	<Story 
+		name='Template'
+		args={{
+			app: 'Route',
+			appLogo: 'https://i.ibb.co/G7368bD/Transparent-Solid-Blue.png',
+			permissions: [
+				{
+					icon: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeeUl9IZDN97pBQNgeunx6dD1df-4g7vkPFw&usqp=CAU',
+					permission: 'Assosciate you with your personal info on Whole',
+					adjustable: false
+				}
+			]
+		}}
+	>
+		{Template.bind({})}
+	</Story>
+</Canvas>

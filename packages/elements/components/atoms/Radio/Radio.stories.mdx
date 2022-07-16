@@ -20,6 +20,9 @@ A radio input allows people to select only one option from a number of choices. 
 <Canvas>
 	<Story 
 		name='Default'
+		args={{
+			label: 'Yes'
+		}}
 	>
 		{Template.bind({})}
 	</Story>
@@ -31,7 +34,8 @@ A radio input allows people to select only one option from a number of choices. 
 	<Story 
 		name='Disabled'
 		args={{
-			disabled: true
+			disabled: true,
+			label: 'Yes'
 		}}
 	>
 		{Template.bind({})}
