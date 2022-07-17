@@ -1,4 +1,5 @@
-import * as React from 'react';
+import { FC } from 'react';
+import Stitch from '../../../stitch';
 
 export interface IAvatarProps {
 	name: string;
@@ -8,14 +9,19 @@ export interface IAvatarProps {
 	circular: boolean;
 };
 
-export const Avatar: React.FC<IAvatarProps> = (props) => {
+const classes = Stitch<IAvatarProps>({
+	base: `flex jc:center ai:center w:56 h:56 bg:gray-90 box-shadow:0px|0px|15px|5px|rgba(0,0,0,0.1):hover
+	cursor:pointer r:4`,
+
+	variants: {
+		circular: 'rounded'
+	}
+});
+
+export const Avatar: FC<IAvatarProps> = (props) => {
 	return (
 		<div
-			className={`
-				flex jc:center ai:center w:56 h:56 bg:gray-90 box-shadow:0px|0px|15px|5px|rgba(0,0,0,0.1):hover
-				cursor:pointer
-				${props.circular ? 'rounded' : 'r:4'}
-			`}
+			className={classes(props)}
 		>
 			{
 				props.image ?

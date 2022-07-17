@@ -1,51 +1,60 @@
-import * as React from 'react';
-import Stitch from 'stitchtail';
+import { FC } from 'react';
+import Stitch from '../../../stitch';
 
 interface IButtonProps {
 	label: string,
 
 	/**
-	* Visually and functionally disable the Button.
-	*/
+	 * Visually and functionally disable the Button.
+	 */
 	disabled: boolean,
 
 	/**
-	* Uppercase the text inside the Button.
-	*/
+	 * Uppercase the text inside the Button.
+	 */
 	uppercase: boolean,
 
 	/**
-	* Bolden the text inside the Button.
-	*/
+	 * Bolden the text inside the Button.
+	 */
 	bold: boolean,
 
 	/**
-	* Remove the border of the Button
-	*/
+	 * Remove the border of the Button
+	 */
 	borderless: boolean,
 
 	/**
-	* Visually make the button like a pill
-	*/
+	 * Visually make the button like a pill
+	 */
 	rounded: boolean,
+
+
+	/**
+	 * Visually disables the button and shows a loading spinner.
+	 */
+	isLoading: boolean,
 }
 
 // 🎨 Classes
 const classes = Stitch<IButtonProps>({
-	base: 'r:50 b:1|solid|gray-86 f:semibold ~all|100ms|ease p:10|15 f:14|semibold {bg:gray-80}:hover outline:none',
+	base: 'r:4 b:1|solid|gray-86 f:semibold ~all|100ms|ease p:10|15 f:14|semibold {bg:gray-80}:hover outline:none',
 
 	variants: {
 		uppercase: 't:uppercase',
 		disabled: 'cursor:not-allowed',
-		bold: 'f:bold'
+		isLoading: 'cursor:not-allowed',
+		bold: 'f:bold',
+		borderless: 'b:none',
+		rounded: 'rounded',
 	},
 });
 
-export const Button: React.FC<IButtonProps> = (props) => {
+export const Button: FC<IButtonProps> = (props) => {
 	return (
-		<div className={classes(props)}>
+		<button className={classes(props)} disabled={props.disabled || props.isLoading}>
 			{props.label}
-		</div>
+		</button>
 	);
 };
 
@@ -56,6 +65,7 @@ Button.defaultProps = {
 	borderless: false,
 	rounded: false,
 	bold: false,
+	isLoading: false
 };
 
 Button.displayName = 'Button';
