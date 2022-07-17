@@ -1,0 +1,24 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs';
+
+import { Table } from './Table';
+
+<Meta 
+	title='Components/Table' 
+	component={Table}
+/>
+
+export const Template = (args) => <Table {...args} />;
+
+<!-- 👇 Docs -->
+
+# Timeline
+
+## Default
+
+<Canvas>
+	<Story 
+		name='Default'
+	>
+		{Template.bind({})}
+	</Story>
+</Canvas>

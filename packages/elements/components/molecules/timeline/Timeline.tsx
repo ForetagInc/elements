@@ -1,7 +1,7 @@
 import { FC, PropsWithChildren, Children, cloneElement, ReactElement, JSXElementConstructor } from 'react';
 
 interface ITimelineProps {
-	horizontal?: boolean;
+	horizontal: boolean;
 }
 
 export const Timeline: FC<PropsWithChildren<ITimelineProps>> = ({ horizontal, children }) => {

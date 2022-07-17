@@ -1,19 +1,18 @@
 
 # Elements
 
-Elements is a open source design system and style guide (for Foretag), it is a collection of reusable components for the web, native  & augmented reality (XR) applications.
+Elements is a open source design system with 1000s of components and style guide (for Foretag), it is a collection of reusable components for the web & augmented reality (XR) applications. Elements allows you to build cross-platform, amazing looking and functional applications, with no compromises.
 
 ## Features
 
-- Multiple themes: Screen & Augmented Reality
+- Multiple themes: Screen & Augmented Reality (AREngine)
 - Light & Dark schemes with-in variants
-- Responsive: Desktop, Wearables or Mobile
+- Multi platform: Desktop, Web, Wearables or Mobile
 - Styled with [Master CSS](https://styles.master.co/) and extendable
-- Built on JS & Rust - for React
+- Built on JS & Rust - for React 18
 - Designed and optimized for a11y
 - Snappy performance and render times
 - 1000+ components, pages, templates and counting
-- Ready for AR, XR and Metaverse
 
 ## Tools & Partners
 
@@ -56,4 +55,5 @@ Elements is a open source design system and style guide (for Foretag), it is a c
 		height='48'
 	/>
 </a>
+
 

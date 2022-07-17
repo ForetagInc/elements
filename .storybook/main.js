@@ -15,6 +15,7 @@ module.exports = {
 		'@storybook/addon-outline',
 		'@storybook/addon-viewport',
 		'@storybook/addon-toolbars',
+		'@storybook/addon-storysource',
 		// Defaults
 		'@storybook/addon-essentials',
 	],
