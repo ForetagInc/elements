@@ -2,7 +2,7 @@ import '@master/css';
 import '@master/normal.css';
 import 'remixicon/fonts/remixicon.css';
 
-import { ThemeContext } from '../packages/elements/Provider';
+import { ThemeProvider } from '../packages/elements/Theme';
 
 // 👉 Toolbar
 
@@ -103,9 +103,9 @@ export const parameters = {
 
 const withThemeProvider = (Story, context) => {
 	return (
-		<ThemeContext.Provider value='screen'>
+		<ThemeProvider>
 			<Story {...context} />
-		</ThemeContext.Provider>
+		</ThemeProvider>
 	)
 };
 

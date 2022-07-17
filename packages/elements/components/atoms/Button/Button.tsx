@@ -1,6 +1,7 @@
 import * as React from 'react';
+import Stitch from 'stitchtail';
 
-export interface IButtonProps {
+interface IButtonProps {
 	label: string,
 
 	/**
@@ -29,16 +30,20 @@ export interface IButtonProps {
 	rounded: boolean,
 }
 
+// 🎨 Classes
+const classes = Stitch<IButtonProps>({
+	base: 'r:50 b:1|solid|gray-86 f:semibold ~all|100ms|ease p:10|15 f:14|semibold {bg:gray-80}:hover outline:none',
+
+	variants: {
+		uppercase: 't:uppercase',
+		disabled: 'cursor:not-allowed',
+		bold: 'f:bold'
+	},
+});
+
 export const Button: React.FC<IButtonProps> = (props) => {
 	return (
-		<div
-			className={`
-				r:50 b:1|solid|gray-86 f:semibold ~all|100ms|ease p:10|15 f:14|semibold {bg:gray-80}:hover
-				outline:none
-				${props.disabled ? 'cursor:not-allowed' : 'cursor:pointer'}
-				${props.uppercase && 't:uppercase'}
-			`}
-		>
+		<div className={classes(props)}>
 			{props.label}
 		</div>
 	);
