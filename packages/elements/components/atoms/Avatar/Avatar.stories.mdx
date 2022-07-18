@@ -7,7 +7,10 @@ import { Avatar, IAvatarProps } from './Avatar';
 	component={Avatar}
 />
 
-export const Template = (args) => <Avatar {...args} />;
+export const Template = (args) => <Avatar
+	name='James Rodriguez'
+	{...args} 
+/>;
 
 <!-- 👇 Docs -->
 
@@ -37,13 +40,14 @@ export const Template = (args) => <Avatar {...args} />;
 	</Story>
 </Canvas>
 
-## Circular 
+## With Name
 
 <Canvas>
 	<Story 
-		name='Circular'
+		name='With Name'
 		args={{
-			circular: true
+			circular: true,
+			showName: true
 		}}
 	>
 		{Template.bind({})}

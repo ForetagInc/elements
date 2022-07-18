@@ -38,7 +38,7 @@ interface IButtonProps {
 
 // 🎨 Classes
 const classes = Stitch<IButtonProps>({
-	base: 'r:4 b:1|solid|gray-86 f:semibold ~all|100ms|ease p:10|15 f:14|semibold {bg:gray-80}:hover outline:none',
+	base: 'r:4 b:1|solid|gray-86 ~all|100ms|ease p:10|15 f:14 {bg:gray-80}:hover outline:none',
 
 	variants: {
 		uppercase: 't:uppercase',

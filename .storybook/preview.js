@@ -102,11 +102,7 @@ export const parameters = {
 };
 
 const withThemeProvider = (Story, context) => {
-	return (
-		<ThemeProvider>
-			<Story {...context} />
-		</ThemeProvider>
-	)
+	return <Story {...context} />;
 };
 
 export const decorators = [withThemeProvider];
